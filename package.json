@@ -1,0 +1,32 @@
+{
+  "name": "my_onlineshop",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon --ext * src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "imports": {
+    "#config": "./config.js",
+    "#pg": "./src/utils/postgres.js",
+    "#jwt": "./src/utils/jwt.js"
+  },
+  "dependencies": {
+    "@graphql-tools/schema": "^8.3.3",
+    "apollo-server": "^3.6.7",
+    "apollo-server-express": "^3.6.4",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-fileupload": "^1.3.1",
+    "graphql": "^16.3.0",
+    "graphql-upload": "^13.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "sha256": "^0.2.0"
+  }
+}

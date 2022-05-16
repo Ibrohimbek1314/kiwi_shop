@@ -1,0 +1,27 @@
+type Query {
+    orders(
+        orderId: ID
+        pagination: Pagination = {}
+        isPaid: String
+    ): [Order!]!
+}
+
+type Mutation {
+    addOrder(product_id: ID! count: Int!): Response!
+}
+
+type Order {
+    orderId: ID!   
+    userId: ID!
+    isPaid: String!
+    product_id: ID!
+    totalprice: Int!
+    count: Int!
+    orderCreatedAt: DateTime!
+}
+
+type Response{
+    status: Int!
+    message: String!
+    data: Any
+}

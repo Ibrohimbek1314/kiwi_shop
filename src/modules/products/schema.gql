@@ -1,0 +1,39 @@
+#-----------------Query and Mutation section----------------
+type Query{
+    products(
+        productId:ID
+        search: String
+        pagination: Pagination = {}
+    ): [Products!]!
+}
+
+type Mutation{
+    addProduct(
+        file: Upload!
+        username: String! #for check admin
+        productName: String!
+        categoryName: String!
+        productPrice: Int! 
+        productShortDescription: String!
+        productLongDescription: String!
+    ): Response!
+}
+
+#------------Determinant of mutation and query type----------
+
+type Products{
+    productId: ID!
+    productName: String!
+    productImg: String!
+    productPrice: Int!
+    productShortDescription: String!
+    productLongDescription: String
+    categoryName: String!
+    productCreatedAt: DateTime! 
+}
+
+type Response{
+    status: Int!
+    message: String!
+    data: Any!
+}

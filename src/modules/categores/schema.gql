@@ -1,0 +1,30 @@
+type Query{
+    categories(
+        categoreId: ID
+        search: String
+        pagination: Pagination = {}
+    ): [Categories!]!
+}
+
+type Mutation{
+    addCategory(
+        categoryName: String!
+    ): Response!
+
+    deleteCategory(
+        categoryName: String! 
+    ): Response!
+
+}
+
+type Categories{
+    categoreId: ID!
+    categoryName: String!
+    categoryCreatedAt: DateTime!
+}
+
+type Response{ 
+    status: Int! 
+    message: String! 
+    data: Any
+}

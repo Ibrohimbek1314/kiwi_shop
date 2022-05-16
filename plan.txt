@@ -1,0 +1,21 @@
+
+* user-system
+    Query
+        users
+            filter: userId, Search 
+            pagination
+            sort: username, createdAt
+        deleteUser
+            filter: userId, Search 
+            pagination
+            sort: username, createdAt
+    Mutation
+        login( username, contact): Token
+        registration( username, password, email, contact): Token
+        deleteUser(userId)
+        changeUser(userId, password, contact, email)
+        changeUserRole(userId, role)
+* categories
+* products
+* orders
+* statistica
